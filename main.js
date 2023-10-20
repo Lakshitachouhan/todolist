@@ -4,16 +4,21 @@ let ul = document.querySelector("ul");
 let del = document.querySelector(".deleteall");
 
 let savetodo = (e) => {
-  e.preventDefault();
-  let newli = document.createElement("li");
-  newli.className = "newli";
-  newli.innerText = input.value;
-  ul.appendChild(newli);
-  console.log(input.value);
-  let del = document.createElement("button");
-  newli.appendChild(del);
-  del.className = "delete";
-  del.textContent = "x";
+  if(input.value === ""){
+    alert("please enter your text")
+  }else{
+    e.preventDefault();
+    let newli = document.createElement("li");
+    newli.className = "newli";
+    newli.innerText = input.value;
+    ul.appendChild(newli);
+    console.log(input.value);
+    let del = document.createElement("button");
+    newli.appendChild(del);
+    del.className = "delete";
+    del.textContent = "x";
+
+  }
 
   form.reset();
 };
